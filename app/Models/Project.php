@@ -11,7 +11,7 @@ use App\Models\Type;
 
 class Project extends Model
 {
-    protected $fillable = ['title', 'content', 'slug', 'type_id'];
+    protected $fillable = ['title', 'content', 'slug', 'type_id', 'technology_id'];
     
     use HasFactory;
 

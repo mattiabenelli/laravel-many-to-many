@@ -35,6 +35,13 @@
                     </select>
                 </div>
                 <div class="form-group my-3">
+                    <label class="control-label">Tipo</label>
+                    @foreach ($technologies as $technology)
+                        <input type="checkbox" value="{{ $technology->id }}">
+                        <label class="form-check-label">{{ $technology->name }}</label>
+                    @endforeach
+                </div>
+                <div class="form-group my-3">
                     <label class="control-label">Contenuto</label>
                     <textarea type="text" class="form-control" placeholder="Contenuto" id="content" name="content"></textarea>
                 </div>
