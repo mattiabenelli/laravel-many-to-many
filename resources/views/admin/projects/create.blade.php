@@ -35,7 +35,7 @@
                     </select>
                 </div>
                 <div class="form-group my-3">
-                    <label class="control-label">Tipo</label>
+                    <label class="control-label">Tecnologie</label>
                     @foreach ($technologies as $technology)
                         <div>
                             <input type="checkbox" value="{{ $technology->id }}" name="technologies[]">

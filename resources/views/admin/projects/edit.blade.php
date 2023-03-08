@@ -28,6 +28,20 @@
                     @endif
                 </div>
                 <div class="form-group my-3">
+                    <label class="control-label">Tecnologie</label>
+                    @foreach ($technologies as $technology)
+                        <div>
+                            @if ($errors->any())
+                                <input type="checkbox" value="{{ $technology->id }}" name="technologies[]" {{ in_array($technology->id, old('technologies', [])) ? 'checked' : '' }}>
+                                <label class="form-check-label">{{ $technology->name }}</label>
+                            @else
+                            <input type="checkbox" value="{{ $technology->id }}" name="technologies[]" {{ $project->technologies->contains($technology) ? 'checked' : ''  }}>
+                            <label class="form-check-label">{{ $technology->name }}</label>
+                            @endif
+                        </div>
+                    @endforeach
+                </div>
+                <div class="form-group my-3">
                     <label class="control-label">Tipo</label>
                     <select class="form-control" name="type_id" id="type_id">
                         @foreach ($types as $type)
