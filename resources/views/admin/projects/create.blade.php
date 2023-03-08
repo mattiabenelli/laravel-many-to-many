@@ -37,8 +37,10 @@
                 <div class="form-group my-3">
                     <label class="control-label">Tipo</label>
                     @foreach ($technologies as $technology)
-                        <input type="checkbox" value="{{ $technology->id }}">
-                        <label class="form-check-label">{{ $technology->name }}</label>
+                        <div>
+                            <input type="checkbox" value="{{ $technology->id }}" name="technologies[]">
+                            <label class="form-check-label">{{ $technology->name }}</label>
+                        </div>
                     @endforeach
                 </div>
                 <div class="form-group my-3">
