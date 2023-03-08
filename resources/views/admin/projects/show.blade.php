@@ -7,6 +7,13 @@
                     <h1 class="my-4">{{ $project->title }}</h1>
                     <h2>Categoria:</h2>
                     <p>{{ $project->type ?  $project->type->name : 'Senza categoria'}}</p>
+                    <h2>Tecnologie utilizzate:</h2>
+                        @forelse ($project->technologies as $item)
+                            <div>{{ $item->name }}</div>
+                            @empty
+                            nessuna tecnologia associata al post
+
+                        @endforelse
                     <h2>Contenuto:</h2>
                     <p>{{ $project->content }}</p>
                     <a href="{{ route('admin.projects.index') }}">Torna all'elenco</a>
